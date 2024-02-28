@@ -1,0 +1,22 @@
+<div class="category-container">
+  <h2>Categories</h2>
+  
+  <!-- Form to add a new category -->
+  <form ngForm (submit)="addCategory()">
+    <label>Add New Category:</label>
+    <input type="text" name="Name"  #categoryName required [(ngModel)]="newCategory.name"  >
+    <button type="submit">Add</button>
+  </form>
+  
+  <!-- Display list of categories -->
+  <ul>
+    <li *ngFor="let category of categoriesToDisplay">
+      <form ngForm>
+      <input type="text" name="Name"  #categoryName required [(ngModel)]="category.categoryUpdate.name" >
+      <!-- //this use becouse input for dad ts -->
+      <span>{{ category.categoryDetails.name}}</span>
+      <button (click)="update(category.categoryUpdate)">Update</button>
+    </form>
+    </li>
+  </ul>
+</div>

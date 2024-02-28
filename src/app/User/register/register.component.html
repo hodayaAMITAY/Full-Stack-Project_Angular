@@ -1,0 +1,12 @@
+<form ngForm (ngSubmit)="onFormSubmit()"  style="font-size: 19px;
+font-weight: bold;">
+    <input type="text" placeholder="First Name" [(ngModel)]="model.firstName" name="firstName" required>
+    <input type="text" placeholder="Last Name" [(ngModel)]="model.lastName" name="lastName" required>
+    <input type="email" placeholder="Email" [(ngModel)]="model.email" name="email" required>
+    <input type="password" placeholder="Password" [(ngModel)]="model.password" name="password" pattern="^(?=.*[a-zA-Z])(?=.*\d)[A-Za-z\d]{8,}$" required>
+    <input type="submit"#submit value="Register" class="button" style="vertical-align:middle">
+  </form>
+  
+
+
+   

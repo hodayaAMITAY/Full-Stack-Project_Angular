@@ -1,0 +1,3 @@
+<img *ngIf="thumbnailUrl" [src]="thumbnailUrl" alt="Video Thumbnail">
+<button *ngIf="videoId" (click)="playVideo()">Play Video</button>
+<div #youtubePlayer></div>

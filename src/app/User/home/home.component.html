@@ -1,0 +1,13 @@
+<div>
+  <h1>דף הבית</h1>
+  <h2>קטגוריות:</h2>
+  <app-category [categories]="allusercategories | async" [userDetails]="userDetails | async"></app-category>
+  <h2>קליפים:</h2>
+  <!-- hear im save list of klip from service into input that at clip.ts -->
+  <app-clip [Clips]=" alluserclips | async" [userDetails]="userDetails | async"
+    [categories]="allusercategories | async">
+  </app-clip>
+  <app-clip-list [Clips]="alluserclips | async" [registerId]="(userDetails | async)?.id ?? ''"></app-clip-list>
+</div>
+<div>------------</div>
+<!-- <div *ngFor="let a of (alluserclips | async)">{{a}}</div> -->

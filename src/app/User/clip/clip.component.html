@@ -1,0 +1,25 @@
+<h2>My Clips</h2>
+
+<!-- <div *ngFor="let clip of Clip; let i = index">
+  //its show mishtane of string (premitivey)
+  <p>{{ Clip.title }}</p>
+  <button (click)="deleteClip(i)">Delete</button> -->
+
+  <div *ngFor="let item of Clips; let i = index">
+    <!-- //show the list -->
+    <p>{{ item.url }}</p>
+    <button (click)="deleteClip(item.id)">Delete</button>
+    <app-video-player [youtubeUrl]="item.url"></app-video-player>
+  </div>
+
+<h2>Add New Clip</h2>
+<form ngForm (submit)="addClip()">
+  <label>YouTube Clip Link:</label>
+  <input type="text"  [(ngModel)]="newClip.url" name="youtubeLink" required>
+  <br>
+  <select type="select" name="categoryid" [(ngModel)]="newClip.categoryid">
+    <option *ngFor="let option of categories" [value]="option.id">{{option.name}}</option>
+  </select>
+  <button type="submit">Add Clip</button>
+</form>
+
