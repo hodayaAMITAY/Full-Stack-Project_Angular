@@ -12,6 +12,7 @@ import { LogoutComponent } from './User/logout/logout.component';
 import { CategoryComponent } from './User/category/category.component';
 import { HomeComponent } from './User/home/home.component';
 import { ClipListComponent } from './User/clip-list/clip-list.component';
+import { VideoPlayerComponent } from './User/video-player/video-player.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ClipListComponent } from './User/clip-list/clip-list.component';
     LogoutComponent,
     CategoryComponent,
     HomeComponent,
-    ClipListComponent
+    ClipListComponent,
+    VideoPlayerComponent
   ],
   imports: [
     BrowserModule,

@@ -6,6 +6,8 @@ import { LogoutComponent } from './User/logout/logout.component';
 import { ClipComponent } from './User/clip/clip.component';
 import { CategoryComponent } from './User/category/category.component';
 import { HomeComponent } from './User/home/home.component';
+import { authGuard } from './User/auth.guard';
+
 
 const routes: Routes = [
 //   {path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -19,7 +21,8 @@ const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'home/clip', component: ClipComponent },
   { path: 'home/category', component: CategoryComponent},
-  { path: 'home', component: HomeComponent },
+  { path: 'home', component: HomeComponent, canActivate: [authGuard] },
+  { path: 'home', component: HomeComponent},
 
 ];
 
